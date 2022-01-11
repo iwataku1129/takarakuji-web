@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/takarakuji-web/static/css/main.1267a2e1.chunk.css",
-    "main.js": "/takarakuji-web/static/js/main.6c5e3c7c.chunk.js",
-    "main.js.map": "/takarakuji-web/static/js/main.6c5e3c7c.chunk.js.map",
+    "main.js": "/takarakuji-web/static/js/main.e7a9aa48.chunk.js",
+    "main.js.map": "/takarakuji-web/static/js/main.e7a9aa48.chunk.js.map",
     "runtime~main.js": "/takarakuji-web/static/js/runtime~main.95dedb7b.js",
     "runtime~main.js.map": "/takarakuji-web/static/js/runtime~main.95dedb7b.js.map",
     "static/css/2.68a81a89.chunk.css": "/takarakuji-web/static/css/2.68a81a89.chunk.css",
@@ -11,7 +11,7 @@
     "static/js/3.3333c741.chunk.js": "/takarakuji-web/static/js/3.3333c741.chunk.js",
     "static/js/3.3333c741.chunk.js.map": "/takarakuji-web/static/js/3.3333c741.chunk.js.map",
     "index.html": "/takarakuji-web/index.html",
-    "precache-manifest.434def284521c57f96f3650b7cb31538.js": "/takarakuji-web/precache-manifest.434def284521c57f96f3650b7cb31538.js",
+    "precache-manifest.6fa686147169e832ebb17092db31c8db.js": "/takarakuji-web/precache-manifest.6fa686147169e832ebb17092db31c8db.js",
     "service-worker.js": "/takarakuji-web/service-worker.js",
     "static/css/2.68a81a89.chunk.css.map": "/takarakuji-web/static/css/2.68a81a89.chunk.css.map",
     "static/css/main.1267a2e1.chunk.css.map": "/takarakuji-web/static/css/main.1267a2e1.chunk.css.map",
