@@ -4,7 +4,7 @@ const Error = () => {
 
   return (
     <div>
-      <h2>404</h2>
+      <h1>404</h1>
       <p>Sorry, the page you're looking con not found.</p>
     </div>
   )

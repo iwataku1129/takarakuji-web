@@ -8,7 +8,7 @@ const Page = () => {
     if (!Title) {
         setTitle("抽選会")
     }
-    document.title = `設定`
+    document.title = `抽選会 - 設定`
     const navigate = useNavigate()
     const [TakaraList, setTakaraList] = useState(
         [
@@ -61,8 +61,11 @@ const Page = () => {
         <div className="App">
             <header clasName="App-header">
                 <Container fluid className="center">
-                    <div className="card">
                     <h2 className="mt-2"><span>設定</span></h2>
+                    < Button variant="primary" size="lg" onClick={() => clickAddList()}>++ 追加 ++</Button>
+                    < Button variant="primary" size="lg" onClick={() => saveTakaralist()}>保存</Button>
+                    < Button variant="primary" size="lg" onClick={() => removeTakaralist()}>全項目削除</Button>
+                    <div className="card">
                         <Form>
                             <Form.Group className="mb-3 + ml-2">
                                 <Form.Control

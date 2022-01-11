@@ -3,6 +3,7 @@ import { Button, Container } from 'react-bootstrap';
 import Confetti from 'react-confetti'
 import useWindowSize from 'react-use/lib/useWindowSize'
 import animation from "./images/animation.gif";
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 const Page = () => {
     // 変数定義
@@ -11,7 +12,7 @@ const Page = () => {
         title = "抽選会"
     }
     document.title = `${title}`
-    const [ViewSts, setViewSts] = useState("Main")
+    const [ViewSts, setViewSts] = useState("Loading")
     const [TakaraName, setTakaraName] = useState(null)
     const [TakaraList, setTakaraList] = useState(
         [
@@ -27,6 +28,7 @@ const Page = () => {
         if (data) {
             setTakaraList(data)
         }
+        setViewSts("Main")
     }, []);
 
     // Button Click Action
@@ -42,16 +44,31 @@ const Page = () => {
 
         // 景品取得・表示
         setTakaraName(copy[index].name)
-        setTimeout(reloadSelect2Page, 3*1000);
+        setTimeout(reloadSelect2Page, 3 * 1000);
     }
     const clickReload = () => {
-        window.location.reload(1);
+        //window.location.reload(1);
+        reloadMainPage()
+    }
+    const clickRandommode = () => {
+        let trycnt = 0
+        while (true) {
+            const randomno = Math.floor(Math.random() * TakaraList.length);
+            if (TakaraList[randomno].disabled === false && TakaraList[randomno].name) {
+                clickTakaraNo(randomno)
+                break;
+            } else if (trycnt >= TakaraList.length) {
+                alert("抽選可能な番号がありません")
+                break;
+            }
+            trycnt += 1
+        }
     }
 
     // ページ遷移関数
     const reloadSelect2Page = async () => {
         setViewSts("selected2")
-        setTimeout(reloadMainPage, 60*1000)
+        setTimeout(reloadMainPage, 60 * 1000)
     }
     const reloadMainPage = async () => {
         setTakaraName(null)
@@ -59,7 +76,16 @@ const Page = () => {
     }
 
     // ページレイアウト
-    if (ViewSts === "selected1") {
+    if (ViewSts === "Loading") {
+        return (
+            <div className="App">
+                <header className="Main-header">
+                    <h4>Now Loading...</h4>
+                    <CircularProgress color="secondary" />
+                </header>
+            </div>
+        )
+    } else if (ViewSts === "selected1") {
         return (
             <header className="App-header">
                 <div className="resizeimage + text-center">
@@ -75,9 +101,9 @@ const Page = () => {
                     height={height}
                     recycle={true}
                 />
-                <h2><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🎉🎉抽 選 結 果🎉🎉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></h2>
-                <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{TakaraName}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-                <Button variant="button" className="text-muted " onClick={clickReload}>前のページへ</Button>
+                <h2><span role="img" aria-label="cracker">　　　🎉 🎉抽 選 結 果🎉 🎉　　　</span></h2>
+                <h3>　　　{TakaraName}　　　</h3>
+                <Button variant="button" className="text-muted " onClick={clickReload}>メインページへ</Button>
 
             </header>
         )
@@ -87,6 +113,9 @@ const Page = () => {
                 <header className="App-header">
                     <Container fluid className="center">
                         <h2 className="mt-2"><span>{title}</span></h2>
+                        <div className="mb-2">
+                            < Button variant="primary" size="lg" onClick={() => clickRandommode()}>ランダム抽選</Button>
+                        </div>
                         <div className="text-center">
                             {TakaraList.map(function (value, index, array) {
                                 let buttonVariant
