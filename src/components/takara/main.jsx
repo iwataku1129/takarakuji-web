@@ -114,7 +114,7 @@ const Page = () => {
                     <Container fluid className="center">
                         <h2 className="mt-2"><span>{title}</span></h2>
                         <div className="mb-2">
-                            < Button variant="primary" size="lg" onClick={() => clickRandommode()}>ランダム抽選</Button>
+                            < Button variant="primary" size="lg" onClick={() => clickRandommode()}>神様にまかせるボタン</Button>
                         </div>
                         <div className="text-center">
                             {TakaraList.map(function (value, index, array) {
