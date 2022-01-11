@@ -21,6 +21,7 @@ const Page = () => {
         ]
     )
     const { width, height } = useWindowSize()
+    const [Timeoutid, setTimeoutid] = useState(null)
 
     // 初回処理
     useEffect(() => {
@@ -51,26 +52,40 @@ const Page = () => {
         reloadMainPage()
     }
     const clickRandommode = () => {
-        let trycnt = 0
+        let checkResult = TakaraList    // 抽選実施有無の管理
+        let endCheckflg = false
         while (true) {
+            // 結果登録用配列作成
             const randomno = Math.floor(Math.random() * TakaraList.length);
             if (TakaraList[randomno].disabled === false && TakaraList[randomno].name) {
                 clickTakaraNo(randomno)
                 break;
-            } else if (trycnt >= TakaraList.length) {
-                alert("抽選可能な番号がありません")
-                break;
+            } else {
+                checkResult[randomno].disabled = true
             }
-            trycnt += 1
+            for (let i = 0; i < checkResult.length; i++) {
+                if (checkResult[i].disabled === false) {
+                    break;
+                } else if (i === checkResult.length - 1) {
+                    alert("抽選可能な番号がありません")
+                    endCheckflg = true  // whileから抜ける為のflg
+                    break;
+                }
+            }
+            if (endCheckflg === true){
+                break;  // whileから抜ける
+            }
         }
     }
 
     // ページ遷移関数
     const reloadSelect2Page = async () => {
         setViewSts("selected2")
-        setTimeout(reloadMainPage, 60 * 1000)
+        let id = setTimeout(reloadMainPage, 60 * 1000)
+        setTimeoutid(id)
     }
     const reloadMainPage = async () => {
+        clearTimeout(Timeoutid)
         setTakaraName(null)
         setViewSts("Main")
     }
