@@ -18,11 +18,11 @@ const navigate = useNavigate();
     return (
         <div className="App">
             <header className="App-header">
-                <Container fluid className="center">
+                <Container>
                     <h2 className="mt-2"><span>{title}</span></h2>
                     <div className="text-center">
-                        < Button variant="primary" size="lg" onClick={() => clickMainPage()}>抽選Pageへ</Button>
-                        < Button variant="primary" size="lg" onClick={() => clickSettingPage()}>設定Pageへ</Button>
+                        < Button variant="info" size="lg" onClick={() => clickMainPage()}>抽選Pageへ</Button>
+                        < Button variant="info" size="lg" onClick={() => clickSettingPage()}>設定Pageへ</Button>
                     </div>
                 </Container>
             </header >

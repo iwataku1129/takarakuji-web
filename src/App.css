@@ -29,12 +29,13 @@
 }
 
 .resizeimage {
-  max-width: 800px;
-  max-height: 800px;
+	margin-right: calc(50% - 50vw);
+	margin-left: calc(50% - 50vw);
 }
-.resizeimage img { 
-  width: 100%;
-  height: 100%;
+.resizeimage img {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 @keyframes App-logo-spin {

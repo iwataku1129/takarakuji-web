@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import Confetti from 'react-confetti'
 import useWindowSize from 'react-use/lib/useWindowSize'
-import animation from "./images/animation.gif";
+import animation1 from "./images/animation1.gif";
+import animation2 from "./images/animation2.gif";
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 const Page = () => {
@@ -20,6 +21,7 @@ const Page = () => {
             { disabled: false, name: "[サンプル]景品②" },
         ]
     )
+    const [AnimationName, setAnimationName] = useState({ value: '1', label: 'スタンダード' })
     const { width, height } = useWindowSize()
     const [Timeoutid, setTimeoutid] = useState(null)
 
@@ -28,6 +30,10 @@ const Page = () => {
         const data = JSON.parse(localStorage.getItem('takaralist'));
         if (data) {
             setTakaraList(data)
+        }
+        const data2 = JSON.parse(localStorage.getItem('animation'));
+        if (data2) {
+            setAnimationName(data2)
         }
         setViewSts("Main")
     }, []);
@@ -45,7 +51,7 @@ const Page = () => {
 
         // 景品取得・表示
         setTakaraName(copy[index].name)
-        setTimeout(reloadSelect2Page, 3 * 1000);
+        setTimeout(reloadSelect2Page, 5 * 1000);
     }
     const clickReload = () => {
         //window.location.reload(1);
@@ -72,7 +78,7 @@ const Page = () => {
                     break;
                 }
             }
-            if (endCheckflg === true){
+            if (endCheckflg === true) {
                 break;  // whileから抜ける
             }
         }
@@ -104,22 +110,29 @@ const Page = () => {
         return (
             <header className="App-header">
                 <div className="resizeimage + text-center">
-                    <img src={animation} alt="抽選中......" />
+                    {(() => {
+                        if (AnimationName.value === '1') {
+                            return (<img src={animation1} alt="抽選中......" />)
+                        } else {
+                            return (<img src={animation2} alt="抽選中......" />)
+                        }
+                    })()}
                 </div>
             </header>
         )
     } else if (ViewSts === "selected2") {
         return (
             <header className="App-header">
-                <Confetti
-                    width={width}
-                    height={height}
-                    recycle={true}
-                />
-                <h2><span role="img" aria-label="cracker">　　　🎉 🎉抽 選 結 果🎉 🎉　　　</span></h2>
-                <h3>　　　{TakaraName}　　　</h3>
-                <Button variant="button" className="text-muted " onClick={clickReload}>メインページへ</Button>
-
+                <Container>
+                    <Confetti
+                        width={width}
+                        height={height}
+                        recycle={true}
+                    />
+                    <h2><span role="img" aria-label="cracker">🎉🎉抽 選 結 果🎉🎉</span></h2>
+                    <h3>{TakaraName}</h3>
+                </Container>
+                <Button variant="button" className="text-muted" onClick={clickReload}>メインページへ</Button>
             </header>
         )
     } else if (ViewSts === "Main") {
@@ -129,7 +142,7 @@ const Page = () => {
                     <Container fluid className="center">
                         <h2 className="mt-2"><span>{title}</span></h2>
                         <div className="mb-2">
-                            < Button variant="primary" size="lg" onClick={() => clickRandommode()}>神様にまかせるボタン</Button>
+                            < Button variant="danger" size="lg" onClick={() => clickRandommode()}>神様にまかせるボタン</Button>
                         </div>
                         <div className="text-center">
                             {TakaraList.map(function (value, index, array) {
