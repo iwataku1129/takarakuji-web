@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2b219a3d8cadc4098b68306a46dc27f3",
+    "revision": "a7cca90eb8f44819e6279eb1c9ddf44a",
     "url": "/takarakuji-web/index.html"
   },
   {
-    "revision": "654f2b79e22d5b667f88",
+    "revision": "a857852fa510946d30d0",
     "url": "/takarakuji-web/static/css/2.68a81a89.chunk.css"
   },
   {
-    "revision": "995423193c0235cf239c",
+    "revision": "74cf2b42d8451252015e",
     "url": "/takarakuji-web/static/css/main.452db457.chunk.css"
   },
   {
-    "revision": "654f2b79e22d5b667f88",
-    "url": "/takarakuji-web/static/js/2.6a4f2174.chunk.js"
+    "revision": "a857852fa510946d30d0",
+    "url": "/takarakuji-web/static/js/2.d83a6c48.chunk.js"
   },
   {
     "revision": "d4f87e4df9aa6e028426",
     "url": "/takarakuji-web/static/js/3.681a63fe.chunk.js"
   },
   {
-    "revision": "995423193c0235cf239c",
-    "url": "/takarakuji-web/static/js/main.98b4fde0.chunk.js"
+    "revision": "74cf2b42d8451252015e",
+    "url": "/takarakuji-web/static/js/main.a5205b4d.chunk.js"
   },
   {
     "revision": "6b6226c779604ec4e8a3",
