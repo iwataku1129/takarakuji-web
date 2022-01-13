@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "801ca82e91246443ca132c8a221c1393",
+    "revision": "03ed88bc7a2b83ae2333828036995b50",
     "url": "/takarakuji-web/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/takarakuji-web/static/css/2.68a81a89.chunk.css"
   },
   {
-    "revision": "31040f45d4b64f54a0de",
+    "revision": "22c51c52cef0a651bb9b",
     "url": "/takarakuji-web/static/css/main.452db457.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/takarakuji-web/static/js/3.ae815b41.chunk.js"
   },
   {
-    "revision": "31040f45d4b64f54a0de",
-    "url": "/takarakuji-web/static/js/main.b445d4c0.chunk.js"
+    "revision": "22c51c52cef0a651bb9b",
+    "url": "/takarakuji-web/static/js/main.ca186e1c.chunk.js"
   },
   {
     "revision": "a6c4a48912d46718f27e",

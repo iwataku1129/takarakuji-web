@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/takarakuji-web/precache-manifest.ae1fe599c561728ef15f08158b71f2c6.js"
+  "/takarakuji-web/precache-manifest.2f52ca2148355cdfd7961a709c1adc3c.js"
 );
 
 self.addEventListener('message', (event) => {
