@@ -3,16 +3,14 @@ import { Button, Container } from 'react-bootstrap';
 import Confetti from 'react-confetti'
 import useWindowSize from 'react-use/lib/useWindowSize'
 import animation1 from "./images/animation1.gif";
-import animation2 from "./images/animation2.gif";
+//import animation2 from "./images/animation2.gif";
+import Lottie from "react-lottie";
+import animationData from "./images/animation2.json";
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 const Page = () => {
     // 変数定義
-    let title = localStorage.getItem('takaratitle')
-    if (!title) {
-        title = "抽選会"
-    }
-    document.title = `${title}`
+    const [Title, setTitle] = useState("抽選会")
     const [ViewSts, setViewSts] = useState("Loading")
     const [TakaraName, setTakaraName] = useState(null)
     const [TakaraList, setTakaraList] = useState(
@@ -27,6 +25,13 @@ const Page = () => {
 
     // 初回処理
     useEffect(() => {
+        let title = localStorage.getItem('takaratitle')
+        if (!title) {
+            title = "抽選会"
+        }
+        document.title = `${title}`
+        setTitle(title)
+
         const data = JSON.parse(localStorage.getItem('takaralist'));
         if (data) {
             setTakaraList(data)
@@ -51,7 +56,7 @@ const Page = () => {
 
         // 景品取得・表示
         setTakaraName(copy[index].name)
-        setTimeout(reloadSelect2Page, 5 * 1000);
+        setTimeout(reloadSelect2Page, 6 * 1000);
     }
     const clickReload = () => {
         //window.location.reload(1);
@@ -114,7 +119,16 @@ const Page = () => {
                         if (AnimationName.value === '1') {
                             return (<img src={animation1} alt="抽選中......" />)
                         } else {
-                            return (<img src={animation2} alt="抽選中......" />)
+                            //return (<img src={animation2} alt="抽選中......" />)
+                            const defaultOptions = {
+                                loop: false,
+                                autoplay: true,
+                                animationData,
+                                rendererSettings: {
+                                    preserveAspectRatio: "xMidYMid slice"
+                                }
+                            };
+                            return (<Lottie options={defaultOptions} isClickToPauseDisabled={true} />)
                         }
                     })()}
                 </div>
@@ -140,7 +154,7 @@ const Page = () => {
             <div className="App">
                 <header className="App-header">
                     <Container fluid className="center">
-                        <h2 className="mt-2"><span>{title}</span></h2>
+                        <h2 className="mt-2"><span>{Title}</span></h2>
                         <div className="mb-2">
                             < Button variant="danger" size="lg" onClick={() => clickRandommode()}>神様にまかせるボタン</Button>
                         </div>

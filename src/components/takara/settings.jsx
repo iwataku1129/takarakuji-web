@@ -5,11 +5,7 @@ import Select from 'react-select'
 
 const Page = () => {
     // 変数定義
-    const [Title, setTitle] = useState(localStorage.getItem('takaratitle'))
-    if (!Title) {
-        setTitle("抽選会")
-    }
-    document.title = `抽選会 - 設定`
+    const [Title, setTitle] = useState("抽選会")
     const navigate = useNavigate()
     const [TakaraList, setTakaraList] = useState(
         [
@@ -22,6 +18,13 @@ const Page = () => {
 
     // 初回処理
     useEffect(() => {
+        let title = localStorage.getItem('takaratitle')
+        if (!title) {
+            title = "抽選会"
+        }
+        document.title = `${title}`
+        setTitle(title)
+        
         // 抽選リスト取得
         const data = JSON.parse(localStorage.getItem('takaralist'));
         if (data) {
