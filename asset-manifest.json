@@ -1,21 +1,20 @@
 {
   "files": {
     "main.css": "/takarakuji-web/static/css/main.452db457.chunk.css",
-    "main.js": "/takarakuji-web/static/js/main.01746985.chunk.js",
-    "main.js.map": "/takarakuji-web/static/js/main.01746985.chunk.js.map",
-    "runtime~main.js": "/takarakuji-web/static/js/runtime~main.d51c8f6a.js",
-    "runtime~main.js.map": "/takarakuji-web/static/js/runtime~main.d51c8f6a.js.map",
+    "main.js": "/takarakuji-web/static/js/main.b445d4c0.chunk.js",
+    "main.js.map": "/takarakuji-web/static/js/main.b445d4c0.chunk.js.map",
+    "runtime~main.js": "/takarakuji-web/static/js/runtime~main.bd6abcf8.js",
+    "runtime~main.js.map": "/takarakuji-web/static/js/runtime~main.bd6abcf8.js.map",
     "static/css/2.68a81a89.chunk.css": "/takarakuji-web/static/css/2.68a81a89.chunk.css",
-    "static/js/2.d83a6c48.chunk.js": "/takarakuji-web/static/js/2.d83a6c48.chunk.js",
-    "static/js/2.d83a6c48.chunk.js.map": "/takarakuji-web/static/js/2.d83a6c48.chunk.js.map",
-    "static/js/3.681a63fe.chunk.js": "/takarakuji-web/static/js/3.681a63fe.chunk.js",
-    "static/js/3.681a63fe.chunk.js.map": "/takarakuji-web/static/js/3.681a63fe.chunk.js.map",
+    "static/js/2.ae2fc4b9.chunk.js": "/takarakuji-web/static/js/2.ae2fc4b9.chunk.js",
+    "static/js/2.ae2fc4b9.chunk.js.map": "/takarakuji-web/static/js/2.ae2fc4b9.chunk.js.map",
+    "static/js/3.ae815b41.chunk.js": "/takarakuji-web/static/js/3.ae815b41.chunk.js",
+    "static/js/3.ae815b41.chunk.js.map": "/takarakuji-web/static/js/3.ae815b41.chunk.js.map",
     "index.html": "/takarakuji-web/index.html",
-    "precache-manifest.5b5b431918f425ea281862acd8d97302.js": "/takarakuji-web/precache-manifest.5b5b431918f425ea281862acd8d97302.js",
+    "precache-manifest.ae1fe599c561728ef15f08158b71f2c6.js": "/takarakuji-web/precache-manifest.ae1fe599c561728ef15f08158b71f2c6.js",
     "service-worker.js": "/takarakuji-web/service-worker.js",
     "static/css/2.68a81a89.chunk.css.map": "/takarakuji-web/static/css/2.68a81a89.chunk.css.map",
     "static/css/main.452db457.chunk.css.map": "/takarakuji-web/static/css/main.452db457.chunk.css.map",
-    "static/media/animation1.gif": "/takarakuji-web/static/media/animation1.6acae9c3.gif",
-    "static/media/animation2.gif": "/takarakuji-web/static/media/animation2.987b8d82.gif"
+    "static/media/animation1.gif": "/takarakuji-web/static/media/animation1.6acae9c3.gif"
   }
 }
